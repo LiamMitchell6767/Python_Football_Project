@@ -4,19 +4,19 @@ Welcome to my project analyzing football data scraped from Transfermarkt. This p
 In this analysis, I aim to uncover trends in the football industry and share insights that could be valuable for enthusiasts, analysts, or anyone curious about the beautiful game. Below, you'll find a dedicated section listing the key questions answered throughout this project.
 
 # The Questions
+### Crucial Moments in Football
+- When do result-altering goals typically occur during a match?
+- What percentage of crucial goals are scored in added time?
+
+### Club, Country, and League Trends
+- Which clubs have assembled the most expensive squads?
+- Which countries produce the most valuable players, and how does this correlate with their footballing reputation?
+- What are the market value trends among the top European leagues?
 
 ### Player Performance and Market Value
-- What metrics contribute most to a player's market value?
-- How does age impact a player's market value?
-- Which positions tend to have the highest market value?
-
-### Crucial Moments in Football
-- How often do crucial goals occur in extra time?
-- Which players tend to score decisive goals?
-
-### Club and Country Trends
-- Which clubs have the most valuable squads?
-- How does a country’s football reputation correlate with the number of high-value players it produces?
+- What metrics contribute most to a player's market value (e.g., goals, assists, minutes played)?
+- How does age influence a player's market value over their career?
+- Which positions (attackers, midfielders, defenders, goalkeepers) tend to have the highest market value, and why?
 
 # 1. Football Match Data Analysis
 
@@ -438,3 +438,15 @@ plt.show()
    - Defenders (**€5.53M**) and goalkeepers (**€4.03M**) have significantly lower average market values compared to their attacking counterparts. While they play critical roles, their market impact appears less pronounced, as evidenced by tighter distributions and fewer high-value outliers.
 
    - Attackers and midfielders show the greatest variability, with outliers up to **€200M**. This indicates a high ceiling for standout performers in these positions, while defenders and goalkeepers see more consistency, with fewer record-breaking valuations.
+
+# Conclusion
+
+- **Result-Altering Goals**: Crucial goals often occur in the final stages of matches, with 38.8% happening between the 69th and 89th minute and another 13.9% in added time. This demonstrates the significance of the closing moments of a game, where players and teams make decisive contributions.
+
+- **Leagues and National Representation**: The Premier League dominates in total market value, showcasing its financial strength and global appeal. Countries like England, France, and Brazil consistently produce the most valuable players, contributing to their clubs' and leagues' success on the global stage.
+
+- **Key Drivers of Market Value**: Goals, assists, and minutes played emerged as the most influential metrics for determining a player’s market value, especially for attackers and midfielders. In contrast, attributes like height and disciplinary records showed little to no correlation with value. 
+
+- **Position-Based Value Trends**: Attackers and midfielders command the highest average market values, reflecting the premium placed on offensive contributions. Defenders and goalkeepers, while essential, are often undervalued, with fewer standout outliers driving their market ceilings.
+
+- **Insights for Future Exploration**: Understanding how performance metrics translate into market value provides valuable insights for fans, analysts, and decision-makers. Future analysis could dive deeper into the influence of external factors, like media hype or transfer market dynamics, on player valuations.
