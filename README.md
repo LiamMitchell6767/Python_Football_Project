@@ -115,7 +115,7 @@ plt.show()
 
 - Most of the result-altering goals (38.8%) occurr in the last quater of the match, which is expected.
 - Though it is the shortest interval, a suprisingly large amount (13.9%) of result-altering goals happen in added time, which is a good reason to watch till the end!
-- 7.1% of matches are decided within the first 22 minutes of the match.
+- 7.1% of matches are decided within the first 22 minutes.
 
 ## Average Goals, Substitutions, Yellow Cards, and Red Cards Per Game
 
@@ -152,7 +152,7 @@ plt.show()
 
 ### Insights
 
-- On average, there are **6.63** substitutions per game, far exceeding other metrics such as goals (2.76) and yellow cards (4.05). This highlights the heavy use of substitutions as a tactical tool in modern football, especially with recent changes allowing more substitutions per game.
+- On average, there are **6.63** substitutions per game, far exceeding other metrics such as goals (**2.76**) and yellow cards (**4.05**). This highlights the heavy use of substitutions as a tactical tool in modern football, especially with recent changes allowing more substitutions per game.
 - Red cards occur at an average of **0.11** per game, making them the least common event by far.
 
 # 2. Player Market Value Analysis
@@ -213,14 +213,14 @@ plt.show()
 ![Top 10 Most Valuable Players](images/top_10_players.png)
 
 ### Insights
-- **Vinicius Junior**, **Erling Haaland**, and **Kylian Mbappé** are the top three most valuable players, each valued close to or above €200M.
+- **Vinicius Junior** and **Erling Haaland** are the two most valuable players, both valued at €200M.
 - Young players like **Lamine Yamal** and **Jude Bellingham** make the list, showcasing the rising trend of high valuations for emerging talents.
-- Players from clubs like **Real Madrid**, **Manchester City**, and **Barcelona** reflect the concentration of top talent in elite teams.
+- Players from clubs like **Real Madrid** and **Manchester City** reflect the concentration of top talent in elite teams.
 
 ---
 
-## Top 10 Countries and Top 5 Leauges with Most Expensive Players
-This is for the the top 10 countries by market values.
+## Top 10 Countries and Leauges with Most Expensive Players
+This is for the the top 10 countries by total market value of players.
 ```python
 Top_10_Countries = (Full_Player_Data.groupby('country_of_citizenship')['market_value_in_eur'].sum().sort_values(ascending=False).head(10))
 
@@ -231,7 +231,7 @@ ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'€{int(y/1000000)
 plt.tight_layout()
 plt.show()
 ```
-This is for the top 5 leagues by market values.
+This is for the top 10 leagues by total market value of players.
 
 ```python
 Top_5_Leagues = Full_Player_Data.groupby('current_club_domestic_competition_id')['market_value_in_eur'].sum().sort_values(ascending=False).head(5)
