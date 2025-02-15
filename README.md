@@ -234,13 +234,24 @@ plt.show()
 This is for the top 10 leagues by total market value of players.
 
 ```python
-Top_5_Leagues = Full_Player_Data.groupby('current_club_domestic_competition_id')['market_value_in_eur'].sum().sort_values(ascending=False).head(5)
+Top_10_Leagues = Full_Player_Data.groupby('current_club_domestic_competition_id')['market_value_in_eur'].sum().sort_values(ascending=False).head(10)
 
-leagues_names = [
-    "Premier League", "LaLiga", "Serie A", "Ligue 1", "Bundesliga"
+# Fill out the corresponding league names for the IDs
+league_names = [
+    "Premier League",   # GB1
+    "LaLiga",           # ES1
+    "Serie A",          # IT1
+    "Ligue 1",          # FR1
+    "Bundesliga",       # L1
+    "Primeira Liga",    # PO1
+    "Eredivisie",       # NL1
+    "Süper Lig",        # TR1
+    "Pro League",       # BE1
+    "Russian Premier League", # RU1
 ]
+
 sns.set_theme(style="ticks")
-sns.barplot (x=leagues_names, y=Top_5_Leagues.values, hue=leagues_names, palette='magma')
+sns.barplot (x=leagues_names, y=Top_10_Leagues.values, hue=leagues_names, palette='magma')
 ax = plt.gca()
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'€{int(y/1000000)}M'))
 plt.show()
@@ -388,8 +399,10 @@ plt.show()
 
 ### Insights
 - **Goals** and **assists** exhibit the strongest positive correlations with market value, particularly for attackers and midfielders, highlighting the premium placed on offensive contributions in football.  
+
 - **Minutes played** demonstrates a moderate correlation across all positions, emphasizing the importance of consistency, availability, and reliability in determining a player's value.  
 - Physical attributes like **height** and disciplinary factors such as **red cards** show negligible or no correlation with market value, indicating their minimal impact on how players are valued.  
+
 - **Age** has a slightly negative correlation, suggesting that market value tends to decline with age. However, the weak magnitude of this relationship reflects that other factors, like performance and potential, may mitigate the effect of age.  
 
 
@@ -431,13 +444,11 @@ plt.show()
 ![Market Value Distribution](images/market_value_distribution.png)
 
 ### Insights
-### **Insights from Market Value by Position**
+- Attackers (**€7.90M**) and midfielders (**€7.31M**) lead in average market value, reflecting the premium placed on offensive and creative roles in football. Their contributions to goals and assists make them more appealing to fans.  
 
-   - Attackers (**€7.90M**) and midfielders (**€7.31M**) lead in average market value, reflecting the premium placed on offensive and creative roles in football. Their contributions to goals and assists make them more appealing to fans.  
+- Defenders (**€5.53M**) and goalkeepers (**€4.03M**) have significantly lower average market values compared to their attacking counterparts. While they play critical roles, their market impact appears less pronounced, as evidenced by tighter distributions and fewer high-value outliers.
 
-   - Defenders (**€5.53M**) and goalkeepers (**€4.03M**) have significantly lower average market values compared to their attacking counterparts. While they play critical roles, their market impact appears less pronounced, as evidenced by tighter distributions and fewer high-value outliers.
-
-   - Attackers and midfielders show the greatest variability, with outliers up to **€200M**. This indicates a high ceiling for standout performers in these positions, while defenders and goalkeepers see more consistency, with fewer record-breaking valuations.
+- Attackers and midfielders show the greatest variability, with outliers up to **€200M**. This indicates a high ceiling for standout performers in these positions, while defenders and goalkeepers see more consistency, with fewer record-breaking valuations.
 
 # Conclusion
 
